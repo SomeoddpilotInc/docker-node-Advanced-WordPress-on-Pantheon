@@ -2,16 +2,19 @@ FROM node:8.11.2
 
 # Set environment variables
 ENV \
-	GULP_VERSION=4.0.0
+	BABEL_VERSION=stable
+	
+ENV \
+	GULP_VERSION=latest
 
 ENV \
-	GRUNT_VERSION=1.0.2
+	GRUNT_VERSION=latest
 
 ENV \
-	WEBPACK_VERSION=4.8.3
+	WEBPACK_CLI_VERSION=latest
 
 ENV \
-	YARN_VERSION=1.7.0
+	YARN_VERSION=stable
 
 # Run updates
 RUN \
@@ -60,6 +63,11 @@ RUN \
 	echo -e "\nUpdating npm..." && \
 	npm install -g npm@latest
 
+# Install babel-register globally
+RUN \
+	echo -e "\nInstalling babel-register v${BABEL_VERSION}..." && \
+	npm install -g babel-register@${BABEL_VERSION}
+
 # Install gulp globally
 RUN \
 	echo -e "\nInstalling gulp v${GULP_VERSION}..." && \
@@ -72,10 +80,12 @@ RUN \
 
 # Install webpack globally
 RUN \
-	echo -e "\nInstalling webpack v${WEBPACK_VERSION}..." && \
-	npm install -g webpack@${WEBPACK_VERSION}
+	echo -e "\nInstalling webpack v${WEBPACK_CLI_VERSION}..." && \
+	npm install -g webpack-cli@${WEBPACK_CLI_VERSION}
 
 # Install yarn globally
 RUN \
 	echo "Installing yarn v${YARN_VERSION}..." && \
-	npm install -g yarn@${YARN_VERSION}
+	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -  && \
+        echo "deb https://dl.yarnpkg.com/debian/ $YARN_VERSION main" | tee /etc/apt/sources.list.d/yarn.list  && \
+        apt-get update && apt-get --no-install-recommends install yarn  && \
