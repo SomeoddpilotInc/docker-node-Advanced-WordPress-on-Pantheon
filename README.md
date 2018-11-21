@@ -1,4 +1,4 @@
-# docker-node-Advanced-WordPress-on-Pantheon
+# docker-node-wp-on-pantheon
 Dockerfile for node steps of Advanced-WordPress-on-Pantheon
 
 ## Includes
