@@ -2,7 +2,7 @@ FROM node:8.11.2
 
 # Set environment variables
 ENV \
-	BABEL_VERSION=stable
+	BABEL_VERSION=latest
 	
 ENV \
 	GULP_VERSION=latest
