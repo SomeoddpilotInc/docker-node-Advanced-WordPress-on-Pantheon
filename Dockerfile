@@ -63,10 +63,15 @@ RUN \
 	echo -e "\nUpdating npm..." && \
 	npm install -g npm@latest
 
-# Install babel-register globally
+# Install @babel/core globally
 RUN \
-	echo -e "\nInstalling babel-register v${BABEL_VERSION}..." && \
-	npm install -g babel-register@${BABEL_VERSION}
+	echo -e "\nInstalling @babel/core v${BABEL_VERSION}..." && \
+	npm install -g @babel/core@${BABEL_VERSION}
+
+# Install @babel/register globally
+RUN \
+	echo -e "\nInstalling @babel/register v${BABEL_VERSION}..." && \
+	npm install -g @babel/register@${BABEL_VERSION}
 
 # Install gulp globally
 RUN \

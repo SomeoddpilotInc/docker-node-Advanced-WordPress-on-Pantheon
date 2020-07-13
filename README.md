@@ -3,7 +3,8 @@ Dockerfile for JavaScript task runner steps of [Advanced-WordPress-on-Pantheon](
 
 ## Includes
 * Node 9.11.2
-* babel-register `latest`
+* @babel/core `latest`
+* @babel/register `latest`
 * gulp `latest`
 * grunt `latest`
 * webpack-cli `latest`
