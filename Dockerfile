@@ -26,7 +26,7 @@ RUN \
 	echo -e "\nInstalling curl..." && \
 	apt-get install -y curl
 
-# Install Node 8
+# Install Node 9
 RUN \
 	echo -e "\nInstalling Node 9..." && \
 	curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
