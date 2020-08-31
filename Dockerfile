@@ -1,4 +1,4 @@
-FROM node:9.11.2
+FROM node:10.21.0
 
 # Set environment variables
 ENV \
@@ -28,8 +28,8 @@ RUN \
 
 # Install Node 9
 RUN \
-	echo -e "\nInstalling Node 9..." && \
-	curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
+	echo -e "\nInstalling Node 10..." && \
+	curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
 	apt-get install -y nodejs
 
 # Install wget
