@@ -28,8 +28,8 @@ RUN \
 
 # Install Node 9
 RUN \
-	echo -e "\nInstalling Node 10..." && \
-	curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+	echo -e "\nInstalling Node 12..." && \
+	curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 	apt-get install -y nodejs
 
 # Install wget
